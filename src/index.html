@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/images/logo.png"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <img src="./assets/images/logo.png" alt="Logo Alura" />
+      <section class="container__content">
+        <!-- <input type="text" id="text" placeholder="Digite seu texto" /> -->
+        <textarea
+          id="text"
+          name="story"
+          rows="5"
+          cols="33"
+          placeholder="Digite um texto"
+        ></textarea>
+        <div class="container__information">
+          <div class="container__content__notice">
+            <img src="./assets/images/Group.png" alt="Ícone de atenção" />
+            <p>Apenas letras minúsculas e sem acento.</p>
+          </div>
+          <div class="container__buttons">
+            <button id="criptografar" class="button" onclick="criptografar()">
+              Criptografar
+            </button>
+            <button
+              id="descriptografar"
+              class="button"
+              onclick="descriptografar()"
+            >
+              Descriptografar
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="container__message" id="result">
+        <img src="./assets/images/people.png" alt="Figura de uma pessoa" />
+        <div class="container__message__content">
+          <h3>Nenhuma mensagem encontrada</h3>
+          <p>
+            Digite um texto que você deseja criptografar ou descriptografar.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>Desenvolvido by Aline 2024</footer>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
