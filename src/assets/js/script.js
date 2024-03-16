@@ -2,9 +2,11 @@ const result = (message) => {
     let resultOnClick = document.getElementById("result");
     resultOnClick.innerHTML = `
     <div class="container__result">
-        <h3 id="copy_text">${message}</h3>
+        <textarea id="copy_text">${message}</textarea>
         <button class="button" onclick="copyText()">Copiar</button>
     </div>`;
+
+    document.querySelector(".button").addEventListener('click', copyText);
 }
 
 const criptografar = () =>{
@@ -85,9 +87,8 @@ const descriptografar = () => {
 }
 
 const copyText = async () => {
-    let text = document.querySelector("#copy_text").innerText;
+    let text = document.querySelector("#copy_text").value;
 
     await navigator.clipboard.writeText(text);
 }
 
-document.querySelector(".button").addEventListener('click', copyText);

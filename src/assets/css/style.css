@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root{
+    --color-background:  #F3F5FC;
+    --color-textarea: #0A3871;
+    --color-white: #FFFFFF;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
+
+
 body {
-    background-color: #F3F5FC;
-    height: 100vh;
+    background-color: var(--color-background);
     box-sizing: border-box;
-    padding-top: 40px;
+    padding-top: 20px;
     font-family: "Inter", sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 textarea{
@@ -25,10 +30,8 @@ textarea{
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-left: 50px;
-    margin-right: 3%;
-    height: 700px;
+    padding: 1% 1% 0% 1%;
+    margin-bottom: 16px;
 }
 
 .container > img {
@@ -37,30 +40,31 @@ textarea{
 }
 
 .container__content {
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 880px;
+    width: 780px;
+    margin-right: 36px;
 }
 
 .container__content > textarea {
-    background-color: #F3F5FC;
+    background-color: var(--color-background);
     margin-top: 50px;
-    color: #0A3871;
-    font-size: 32px;
-    width: 880px;
-    height: 500px;
+    margin-bottom: 10px;
+    color: var(--color-textarea);
+    font-size: 2rem;
+    width: 640px;
+    height: 480px;
 }
 
 .container__content > textarea::placeholder {
-    color: #0A3871; 
+    color: var(--color-textarea); 
 }
 
 .container__content__notice {
     display: flex;
     flex-direction: row;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .container__content__notice > p {
@@ -69,8 +73,7 @@ textarea{
     padding-left: 5px;
 }
 
-.container__information
-{
+.container__information{
     padding-bottom: 20px;
 }
 
@@ -79,30 +82,26 @@ textarea{
     justify-content: space-between;
 }
 
-.container__buttons > button {
-    width: 428px;
-}
-
 .button {
     cursor: pointer;
     border-radius: 24px;
     height: 67px;
-    font-size: 16px;
+    font-size: 1rem;
     background-color: #D8DFE8;
-    border: 1px solid #0A3871;
-    color: #0A3871;
+    border: 1px solid var(--color-textarea);
+    color: var(--color-textarea);
+    width: 432px;
 }
 
 #criptografar {
-    background-color: #0A3871;
-    color: #FFFFFF;
+    background-color: var(--color-textarea);
+    color: var(--color-white);
+    margin-right: 20px;
 }
 
 
 .container__message {
-    background-color: #FFFFFF;
-    width: 350px;
-    height: 700px;
+    background-color: var(--color-white);
     border-radius: 32px;
     display: flex;
     flex-direction: column;
@@ -126,8 +125,8 @@ textarea{
 }
 
 .container__message > img {
-    width: 296px;
-    height: 264px;
+    width: 266px;
+    height: 234px;
 }
 
 .container__result {
@@ -135,25 +134,93 @@ textarea{
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    padding: 30px 30px 30px 30px;
+    padding: 10px 20px 20px 10px;
 }
 
-.container__result > h3 {
+.container__result > textarea {
     color: #495057;
-    font-size: 20px;
-    margin: 0 15px;
+    font-size: 1.25rem;
+    padding: 20px 20px 20px 20px;
+    width: auto;
+    height: 100%;
 }
 
 .container__result > button {
-    width: 308px;
+    width: 350px;
+    height: 69px;
 }
 
-footer {
-    width: 100%;
-    height: 50px;
+.footer {
+    height: 28px;
+    padding: 16px;
     background-color: #4d7db8;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .container > img {
+        width: 70px;
+    }
+
+    .container__content {
+        width: 100%;
+    }
+
+    .container__content > textarea {
+        padding-left: 20px;
+    }
+
+
+    .container__information{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container__buttons {
+        width: 85%;
+        gap: 10px;
+    }
+
+    #criptografar {
+        margin-right: 0;
+    }
+
+    .container__message{
+        border:1px solid red;
+    }
+
+    .container__message > img {
+        display: block;
+    }
+
+}
+
+/* @media (max-width: 375px) {
+    body {
+        border:1px solid red;
+        padding-top: 10px;
+        width: 15rem;
+        display: flex;
+    }
+
+    .container {
+        border:1px solid rgb(4, 255, 0);
+        margin-top: 0;
+    }
+
+    .container > img {
+        width: 50px;
+        height: 55px;
+    }
+} */
